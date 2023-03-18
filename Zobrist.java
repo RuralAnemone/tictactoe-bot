@@ -1,3 +1,5 @@
+// you guess whether I wrote this or whether it was gpt-3
+
 public class Zobrist {
 
     private long[][] zobristTable;
