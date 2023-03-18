@@ -3,13 +3,14 @@
 public class Zobrist {
 
     private long[][] zobristTable;
-    private static final int SIZE = 3;
+    private int size;
 
     // constructor
-    public Zobrist() {
-        zobristTable = new long[SIZE][SIZE];
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+    public Zobrist(TicTacToe board) {
+        this.size = board.getBoard().length;
+        zobristTable = new long[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 zobristTable[i][j] = generateRandomNumber();
             }
         }
@@ -24,8 +25,8 @@ public class Zobrist {
     public long hash(TicTacToe board) {
         long hash = 0;
         String[][] boardState = board.getBoard();
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 if (boardState[i][j] == "X") {
                     hash ^= zobristTable[i][j];
                 } else if (boardState[i][j] == "O") {
