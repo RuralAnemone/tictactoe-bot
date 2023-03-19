@@ -44,6 +44,11 @@ public class TicTacToeTester
             System.out.println("make a move:");
             row = Integer.parseInt(prompt("row: "));
             col = Integer.parseInt(prompt("col: "));
+
+            if (!game.pickLocation(row, col)) {
+                clear();
+                System.out.println("oh no! one of your inputs was wrong! please try again.\n");
+            }
         }
         game.takeTurn(row, col);
     }
