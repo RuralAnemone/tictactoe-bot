@@ -1,3 +1,3 @@
 public class Bingus {
-    public Bingus() { }
+	public Bingus() { }
 }
