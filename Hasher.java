@@ -1,18 +1,8 @@
-public class Zobrist {
-
-	// private long[][] zobristTable;
-	private int size;
-	private String[][] board;
-
-	// constructor
-	public Hasher(TicTacToe board) {
-		this.board = board.getBoard(); // hehe wow that's fun to read :)
-		// board board board board board board board board board board board
-	}
+public class Hasher {
 
 	// ok so the board hash is a ternary number (troll emoji) where 0 is empty space, 1 is X, and 2 is O
 	// ... and then it's condensed into nonary and then trinonary
-	public String /* for minimal data loss??? */ hash(TicTacToe board) { //you know, I should really make my own data type for this :)
+	public static String /* for minimal data loss??? */ hash(TicTacToe board) { //you know, I should really make my own data type for this :)
 		String hash = "";
 		for (String[] e : board) {
 			for (String f : e) {

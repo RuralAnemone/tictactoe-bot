@@ -1,5 +1,15 @@
 public class TicTacToeBot {
-	public static void main(String[] args) {
-		// um uh uh um
+
+	private TicTacToe board;
+	private String hash;
+
+	public TicTacToeBot(TicTacToe board) {
+		this.board = board;
+		this.hash = Hasher.hash(board);
+	}
+
+	public int[] move() {
+		// welcome to the tenth circle of hell
+
 	}
 }
