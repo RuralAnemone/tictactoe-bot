@@ -16,8 +16,10 @@ public class TicTacToeTester
 			if (game.checkWin()) continue;
 
 			if (gameType == 0) twoPlayerGame(game);
-			else onePlayerGame(game);
-			
+			else {
+				onePlayerGame(game);
+				i++;
+			}
 		}
 
 		clear();
@@ -53,7 +55,35 @@ public class TicTacToeTester
 		game.takeTurn(row, col);
 	}
 
-	static void onePlayerGame(TicTacToe game) { }
+	static void onePlayerGame(TicTacToe game) {
+		clear();
+		game.printBoard();
+		System.out.println();
+
+		int row = 69;
+		int col = 69;
+		while (!game.pickLocation(row, col)) {
+			System.out.println("⚠ this program will cry if you don't enter an integer between 0 and 2 ⚠\n");
+			System.out.println("It's your turn!");
+			System.out.println("make a move:");
+			row = Integer.parseInt(prompt("row: "));
+			col = Integer.parseInt(prompt("col: "));
+
+			if (!game.pickLocation(row, col)) {
+				clear();
+				System.out.println("oh no! one of your inputs was wrong! please try again.\n");
+			}
+		}
+		game.takeTurn(row, col);
+		// I really don't feel like condensing this into reusable code ugh
+		// --
+		
+		// bot stuff
+		TicTacToeBot bot = new TicTacToeBot(board);
+		int[] botMove = bot.move();
+		game.takeTurn(botMove[0], botMove[1]);
+
+	}
 
 	static String prompt(String text) {
 		Scanner input = new Scanner(System.in);
