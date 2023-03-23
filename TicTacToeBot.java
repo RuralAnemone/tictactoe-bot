@@ -15,9 +15,9 @@ public class TicTacToeBot {
 		switch(hash) {
 		 // case "hash": return {row, col};
 			case "0":
-			    out[0] = 0;
-			    out[1] = 0;
-			    break;
+				out[0] = 0;
+				out[1] = 0;
+				break;
 
 			// default: throw new Bingus();
 		}
