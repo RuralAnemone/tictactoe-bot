@@ -79,7 +79,7 @@ public class TicTacToeTester
 		// --
 		
 		// bot stuff
-		TicTacToeBot bot = new TicTacToeBot(board);
+		TicTacToeBot bot = new TicTacToeBot(game);
 		int[] botMove = bot.move();
 		game.takeTurn(botMove[0], botMove[1]);
 

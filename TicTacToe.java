@@ -14,6 +14,10 @@ public class TicTacToe
 	{
 		return this.turn;
 	}
+	
+	public String[][] toArray() {
+	    return this.board;
+	}
 
 	// prints out the board array on to the console
 	public void printBoard()
