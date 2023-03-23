@@ -1,7 +1,7 @@
 public class Hasher {
 
 	// ok so the board hash is a ternary number (troll emoji) where 0 is empty space, 1 is X, and 2 is O
-	// ... and then it's condensed into nonary and then trinonary
+	// ... and then it's condensed into trinonary
 	public static String /* for minimal data loss??? */ hash(TicTacToe board) { //you know, I should really make my own data type for this :)
 		String hash = "";
 		for (String[] e : board) {
