@@ -15,7 +15,7 @@ public class Hasher {
 		return condense(hash);
 	}
 
-	public String condense(String ternaryString) {
+	public static String condense(String ternaryString) {
 		// to trinonary (base-27, [0-9a-q])!!
 		return Integer.toString(Integer.parseInt(ternaryString, 3), 27);
 	}
